@@ -419,10 +419,10 @@ class Decoder(srd.Decoder):
 				[9, ['Current Volume Level']])
 			if self.values[3] == 0xFF:
 				self.put(bitData[3][currentBit+8][0], bitData[3][currentBit+15][2], self.out_ann,
-					[3, ['Current Volume Level: 32/32']])
-			elif self.values[3] < 32:
+					[3, ['Current Volume Level: 30/30']])
+			elif self.values[3] < 30:
 				self.put(bitData[3][currentBit+8][0], bitData[3][currentBit+15][2], self.out_ann,
-					[3, ['Current Volume Level: %d/32' % self.values[3]]])
+					[3, ['Current Volume Level: %d/30' % self.values[3]]])
 			else:
 				self.put(bitData[3][currentBit+8][0], bitData[3][currentBit+15][2], self.out_ann,
 					[10, ['UNRECOGNIZED VALUE']])
